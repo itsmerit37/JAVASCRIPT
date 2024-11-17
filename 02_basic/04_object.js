@@ -20,10 +20,30 @@ const obj2={3:"c",4:"d"}
 object3={...obj1,...obj2} // spread operator
 console.log(object3);
 
-console.log(Object.keys(tinderUser))
-console.log(Object.values(tinderUser));
+// console.log(Object.keys(tinderUser))
+// console.log(Object.values(tinderUser));
 
-console.log(regularUser.email);
+// console.log(regularUser.email);
+
+
+const course={
+    courseName:"JS in Hindi",
+    price:"999",
+    courseInstructor:"Hitesh"
+}
+const {courseInstructor:instructor}=course
+console.log(instructor);
+
+//json
+
+
+// {
+//   "name":"Ritesh",
+//   "price":"Free",
+//   "courseName":"JS in hindi"
+
+
+// }
 
 
 
