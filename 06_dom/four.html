@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: beige;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // Function to add language using innerHTML
+    function addLanguage(langName) {
+        const li = document.createElement("li");
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("React");
+
+    // Function to add language using text node
+    function addLanguageWithTextNode(langName) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguageWithTextNode("Java"); // Now calling the correct function
+
+    // Edit: Select the second language in the list
+    const secLanguage = document.querySelector("li:nth-child(2)");
+    console.log(secLanguage);
+    const newLi=document.createElement('li')
+   // console.log(newLi);
+    newLi.textContent="Angular"
+    secLanguage.replaceWith(newLi)
+
+    //
+
+    const firstLang=document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>Typescript</li>'
+
+        //remove
+
+        const remLast=document.querySelector("li:last-child")
+        //console.log(remLast);
+        
+        remLast.remove()
+
+    
+</script>
+</html>
