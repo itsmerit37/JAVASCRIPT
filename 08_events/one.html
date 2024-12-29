@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: gray;">
+    <h2>Amazing Image</h2>
+    <ul id="images">
+        <li><img id="mountain" width="200px" src="https://images.pexels.com/photos/67517/pexels-photo-67517.jpeg?cs=srgb&dl=landscape-mountains-nature-67517.jpg&fm=jpg" alt=""></li>
+        <li><img id="sea" width="200px"  src="https://images.hdqwalls.com/download/sea-shore-waves-at-night-time-4k-yr-3840x2160.jpg" alt=""></li>
+        <li><img  id="land" width="200px"  src="https://th.bing.com/th/id/OIP.HtyVJkvODpqsbEV9R2K57gHaEK?rs=1&pid=ImgDetMain" alt=""></li>
+        <li><img id="fire" width="200px" src="https://th.bing.com/th/id/OIP.p0O6gljoK5znrsexB2kMTQHaEK?w=1280&h=720&rs=1&pid=ImgDetMain" alt=""></li>
+    </ul>
+</body> 
+<script>
+    //use event listener to listen for click event on the mountain image is best approach to add event listener
+    //you can use onclick also but its not recommended
+
+     //type ,timestamp ,defaultPrevented
+    //target ,toelement,srcElement,currentTarget
+    //clientX ,clientY
+    //altKey,ctrlKey,shiftKey,metaKey
+
+   //bubblling element in this first mountuain image event will be called then image event will be called (child to parent) if we do false in add event listener then parent to child
+    
+   //--------------------------------------------------------------------------//
+   
+   // document.getElementById('images').addEventListener('click', function(){
+    //     console.log('You clicked on the image 2nd');
+    // },false);
+
+    // document.getElementById('mountain').addEventListener('click', function(){
+    //     console.log('You clicked on the mountain image 2nd');
+    // },false);
+
+
+//--------------------------------------------------------------------------//
+    
+
+//bubblling element in this first mountuain image event will be called then image event will be called (child to parent) if we do true in add event listener then parent to child
+   
+
+
+//--------------------------------------------------------------------------//
+
+
+
+    //    document.getElementById('images').addEventListener('click', function(){
+    //     console.log('You clicked on the image');
+    // },true);
+
+    // document.getElementById('mountain').addEventListener('click', function(){
+    //     console.log('You clicked on the mountain image');
+    // },true);
+
+  //stop propagation
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('You clicked on the image 2nd');
+    // },false);
+
+    // document.getElementById('mountain').addEventListener('click', function(e){
+    //     console.log('You clicked on the mountain image 2nd');
+    //     e.stopPropagation();
+    // },false);
+
+    const images=document.getElementById('images').addEventListener('click', function(e){
+        let removeIt=e.target.tagName
+        if(removeIt==='IMG'){
+            let remove=e.target.parentNode
+            remove.remove();
+        }
+    },false);
+
+
+    </script>
+</html>
