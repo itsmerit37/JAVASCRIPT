@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Project with Async and pratice</h1>
+    <ul>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</ul>
+</body>
+<script>
+    const Async=setInterval(()=>
+    {
+        console.log('Hello' ,Date.now())
+    },2000)
+
+    document.getElementById('stop').addEventListener('click',()=>
+    {
+        clearInterval(Async)
+        
+    })
+    document.getElementById('start').addEventListener('click',()=>
+    {
+    setInterval(()=>
+    {
+        console.log('Hello' ,Date.now())
+    },2000)      
+        
+    })
+</script>
+</html>
